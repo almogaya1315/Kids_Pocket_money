@@ -17,9 +17,9 @@ namespace Kids_Pocket_money.Views
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainControl : UserControl
     {
-        public MainWindow()
+        public MainControl()
         {
             InitializeComponent();
         }

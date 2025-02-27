@@ -7,14 +7,17 @@
         xmlns:mainViewModel="clr-namespace:Kids_Pocket_money.ViewModels"
         xmlns:mainView="clr-namespace:Kids_Pocket_money.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow"
+        Height="450"
+        Width="800">
+    
     <Window.Resources>
         <DataTemplate DataType="{x:Type mainViewModel:MainViewModel}">
-            <mainView:MainWindow />
+            <mainView:MainControl />
         </DataTemplate>
     </Window.Resources>
-    
+
     <ContentPresenter Content="{Binding ContainerContent}" />
 
-    
+
 </Window>
