@@ -23,5 +23,20 @@ namespace Kids_Pocket_money.Views
         {
             InitializeComponent();
         }
+
+        private void AssignChore_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void EditData_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ChoresTracking_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

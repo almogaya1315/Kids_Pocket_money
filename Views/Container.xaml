@@ -8,8 +8,9 @@
         xmlns:mainView="clr-namespace:Kids_Pocket_money.Views"
         mc:Ignorable="d"
         Title="MainWindow"
-        Height="450"
-        Width="800">
+        Height="350"
+        Width="700"
+        ResizeMode="NoResize">
     
     <Window.Resources>
         <DataTemplate DataType="{x:Type mainViewModel:MainViewModel}">
