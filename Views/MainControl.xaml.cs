@@ -32,7 +32,7 @@ namespace Kids_Pocket_money.Views
 
         private void EditData_Click(object sender, RoutedEventArgs e)
         {
-            var container = (Window)VisualTreeHelper.GetParent(this);
+            var container = (Window)(VisualTreeHelper.GetParent(this) as ContentPresenter).Parent;
             var containerContext = (ContainerViewModel)container.DataContext;
 
             containerContext.GoToPage(new GoTo(ePages.EditData));

@@ -4,17 +4,20 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kids_Pocket_money"
-        xmlns:mainViewModel="clr-namespace:Kids_Pocket_money.ViewModels"
-        xmlns:mainView="clr-namespace:Kids_Pocket_money.Views"
+        xmlns:viewModels="clr-namespace:Kids_Pocket_money.ViewModels"
+        xmlns:views="clr-namespace:Kids_Pocket_money.Views"
         mc:Ignorable="d"
-        Title="MainWindow"
+        Title="Kids Chores Pocket Money"
         Height="350"
         Width="700"
         ResizeMode="NoResize">
     
     <Window.Resources>
-        <DataTemplate DataType="{x:Type mainViewModel:MainViewModel}">
-            <mainView:MainControl />
+        <DataTemplate DataType="{x:Type viewModels:MainViewModel}">
+            <views:MainControl />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:EditViewModel}">
+            <views:EditData />
         </DataTemplate>
     </Window.Resources>
 

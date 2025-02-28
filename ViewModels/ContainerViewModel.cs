@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace Kids_Pocket_money.ViewModels
 {
@@ -33,7 +34,8 @@ namespace Kids_Pocket_money.ViewModels
                     ContainerContent = new MainViewModel();
                     break;
                 case ePages.EditData:
-                    //ContainerContent = new EditDataViewModel();
+                    var mainVM = (MainViewModel)ContainerContent;
+                    ContainerContent = new EditViewModel(mainVM.Children, mainVM.Chores);
                     break;
             }
         }
