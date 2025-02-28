@@ -32,6 +32,9 @@ namespace Kids_Pocket_money.ViewModels
                 case ePages.MainWindow:
                     ContainerContent = new MainViewModel();
                     break;
+                case ePages.EditData:
+                    //ContainerContent = new EditDataViewModel();
+                    break;
             }
         }
     }
@@ -49,5 +52,7 @@ namespace Kids_Pocket_money.ViewModels
     public enum ePages
     {
         MainWindow,
+        EditData,
+        ChoresTracking
     }
 }

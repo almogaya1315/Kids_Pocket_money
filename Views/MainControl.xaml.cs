@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kids_Pocket_money.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,7 +32,10 @@ namespace Kids_Pocket_money.Views
 
         private void EditData_Click(object sender, RoutedEventArgs e)
         {
+            var container = (Window)VisualTreeHelper.GetParent(this);
+            var containerContext = (ContainerViewModel)container.DataContext;
 
+            containerContext.GoToPage(new GoTo(ePages.EditData));
         }
 
         private void ChoresTracking_Click(object sender, RoutedEventArgs e)
