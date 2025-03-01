@@ -16,15 +16,15 @@ namespace Kids_Pocket_money.ViewModels
         public ObservableCollection<ChoreViewModel> Chores { get; set; }
         public MainViewModel()
         {
-            ChildViewModel Yiska = new ChildViewModel("Yiska", 15);
-            ChildViewModel Moriya = new ChildViewModel("Moriya", 13);
-            ChildViewModel Ariel = new ChildViewModel("Ariel", 11);
-            ChildViewModel Yoav = new ChildViewModel("Yoav", 4);
-            Children = new ObservableCollection<ChildViewModel> { Yiska, Moriya, Ariel, Yoav };
+            //ChildViewModel Yiska = new ChildViewModel("Yiska", 15);
+            //ChildViewModel Moriya = new ChildViewModel("Moriya", 13);
+            //ChildViewModel Ariel = new ChildViewModel("Ariel", 11);
+            //ChildViewModel Yoav = new ChildViewModel("Yoav", 4);
+            //Children = new ObservableCollection<ChildViewModel> { Yiska, Moriya, Ariel, Yoav };
 
             var context = new ChoresContext();
             Chores = new ObservableCollection<ChoreViewModel>();
-            foreach (var chore in context.ChoresList)
+            foreach (var chore in context.Chores)
             { 
                 var newChore = new ChoreViewModel(chore);
                 Chores.Add(newChore);

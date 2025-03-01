@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using Kids_Pocket_money.Entities;
 using Kids_Pocket_money.Models;
 using System;
 using System.Collections.Generic;
@@ -10,20 +11,21 @@ namespace Kids_Pocket_money.ViewModels
 {
     public class ChildViewModel : ObservableObject
     {
-        public ChildViewModel(string name, int age)
+        private ChildEntity _entity;
+
+        public ChildViewModel(ChildEntity entity)
         {
-            _childModel = new Child(name, age);
+            _entity = entity;
         }
-        private Child _childModel;
         public string Name
         {
-            get { return _childModel.Name; }
-            set { _childModel.Name = value; }
+            get { return _entity.Name; }
+            set { _entity.Name = value; }
         }
         public int Age 
         {
-            get { return _childModel.Age; }
-            set { _childModel.Age = value; }
+            get { return _entity.Age; }
+            set { _entity.Age = value; }
         }
     }
 }

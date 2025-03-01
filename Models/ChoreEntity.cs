@@ -12,9 +12,11 @@ namespace Kids_Pocket_money.Entities
         public string Name { get; set; }
         public int Points { get; set; }
         public bool IsCompleted { get; set; }
-        public int Test { get; set; }
-        public ChoreEntity(string name, int points)
+        public DateTime Start { get; set; }
+        public DateTime End { get; set; }
+        public ChoreEntity(int id, string name, int points)
         {
+            Id = id;
             Name = name;
             Points = points;
         }
