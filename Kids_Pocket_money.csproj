@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DAL\" />
+    <Folder Include="DAL\sql\" />
     <Folder Include="Migrations\" />
     <Folder Include="Services\" />
   </ItemGroup>

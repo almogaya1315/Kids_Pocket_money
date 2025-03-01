@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Kids_Pocket_money.Entities;
+using Kids_Pocket_money.Models;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 
 namespace Kids_Pocket_money.Context
 {
@@ -43,6 +45,8 @@ namespace Kids_Pocket_money.Context
         }
 
         public DbSet<ChoreEntity> Chores { get; set; }
+        public DbSet<ChildEntity> Children { get; set; }
+
         //public List<ChoreEntity> ChoresList { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -52,13 +56,18 @@ namespace Kids_Pocket_money.Context
             //var _connectionString = @"Data Source=DESKTOP-I9GEGTE\MSSQLSERVER1;Initial Catalog=GarageDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
             //var _connectionString = "";
             //optionsBuilder.UseSqlServer(_connectionString);
-
+            
+            // THE ONLY DIFFERENCE BETWEEN SQLLITE & SQLSERVER
+            // JUST VERIFY SCHEMA WITH UPDATING ALL RELEVANT MIGRATIONS
             var _connectionString = @"Data Source=DESKTOP-6TQMGKV\SQLEXPRESS;Initial Catalog=ChoresDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
             optionsBuilder.UseSqlServer(_connectionString);
 
             //optionsBuilder.UseSqlite(@"\Data Source=\C:\Users\hadady\Documents\1.5.1 - Gamla\ATE.db\;Version=3;\;");
             //optionsBuilder.UseSqlite(@"\Data Source=\C:\c# course\DB's\ATE.db\;Version=3;\;");
             //optionsBuilder.UseSqlite(@"Data Source=C:\c# course\DBs\KidsMoney.db;");
+
+            /// *** ONLY USE WHEN SURE THAT MANUAL CHANGES TO MIGRATIONS (UP & DOWN METHODS) ARE VALID!!!! ***
+            //optionsBuilder.ConfigureWarnings(w => w.Ignore(RelationalEventId.PendingModelChangesWarning));
 
             //base.OnConfiguring(optionsBuilder);
         }
@@ -83,6 +92,13 @@ namespace Kids_Pocket_money.Context
             //    new ChoreEntity(15, "cleaning_counter", 2),
             //    new ChoreEntity(16, "drying_dishes", 3)
             //);
+
+            //modelBuilder.Entity<ChildEntity>().HasData(
+            //    new ChildEntity(1, "Yiska", 15),
+            //    new ChildEntity(2, "Moriya", 13),
+            //    new ChildEntity(3, "Ariel", 11),
+            //    new ChildEntity(4, "Yoav", 4)
+            //    );
 
             base.OnModelCreating(modelBuilder);
         }

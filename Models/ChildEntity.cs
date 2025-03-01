@@ -10,8 +10,9 @@ namespace Kids_Pocket_money.Models
 {
     public class ChildEntity : ChildBase, IChild
     {
-        public ChildEntity(string name, int age)
+        public ChildEntity(int id, string name, int age)
         {
+            Id = id;
             Name = name;
             Age = age;
         }

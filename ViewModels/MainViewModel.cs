@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,13 +17,15 @@ namespace Kids_Pocket_money.ViewModels
         public ObservableCollection<ChoreViewModel> Chores { get; set; }
         public MainViewModel()
         {
-            //ChildViewModel Yiska = new ChildViewModel("Yiska", 15);
-            //ChildViewModel Moriya = new ChildViewModel("Moriya", 13);
-            //ChildViewModel Ariel = new ChildViewModel("Ariel", 11);
-            //ChildViewModel Yoav = new ChildViewModel("Yoav", 4);
-            //Children = new ObservableCollection<ChildViewModel> { Yiska, Moriya, Ariel, Yoav };
-
             var context = new ChoresContext();
+
+            Children = new ObservableCollection<ChildViewModel>();
+            foreach (var child in context.Children)
+            {
+                var newChild = new ChildViewModel(child);
+                Children.Add(newChild);
+            }
+
             Chores = new ObservableCollection<ChoreViewModel>();
             foreach (var chore in context.Chores)
             { 
